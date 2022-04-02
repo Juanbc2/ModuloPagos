@@ -4,18 +4,20 @@
  */
 package vista;
 
+import control.DAOGerente;
 import control.DAOempleadoNomina;
+import javax.swing.JOptionPane;
 import modelo.empleado;
+import modelo.empleadoNomina;
 
 public class modiUsuario extends javax.swing.JFrame {
 
     private static empleado empleadoActual;
+
     public modiUsuario(empleado empleadoActual) {
         modiUsuario.empleadoActual = this.empleadoActual;
         initComponents();
         setLocationRelativeTo(null);
-
-        
 
     }
 
@@ -70,7 +72,7 @@ public class modiUsuario extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 18)); // NOI18N
         jLabel3.setText("Aquí se permitirá modificar el acceso del usuario ingresado por cédula");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/UserEdit_40958.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/UserEdit_40958.png"))); // NOI18N
 
         btnAtras.setFont(new java.awt.Font("Bodoni MT Condensed", 1, 24)); // NOI18N
         btnAtras.setText("Atrás");
@@ -162,18 +164,56 @@ public class modiUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaActionPerformed
-        
+
     }//GEN-LAST:event_txtCedulaActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        DAOempleadoNomina metodos = new DAOempleadoNomina();
-        int ced = Integer.parseInt(txtCedula.getText());
-        dispose();
+        try {
+            int ced = Integer.parseInt(txtCedula.getText());
+            DAOempleadoNomina metodosEmpleadosNomina = new DAOempleadoNomina();
+            empleadoNomina empleadoACambiar = metodosEmpleadosNomina.getEmpleado(ced);
+            if (empleadoACambiar != null) {
+                String isActivo = "";
+                if (empleadoACambiar.activo) {
+                    isActivo = "Activo";
+                } else {
+                    isActivo = "Desactivado";
+                }
+                int seleccion = JOptionPane.showOptionDialog(
+                        rootPane,
+                        "¿Está seguro que desea cambiar el estado del Usuario \"" + empleadoACambiar.getNombre() + " \" ahora? \n."
+                        + "El usuario se encuentra actualmente en estado " + isActivo + ".",
+                        "Cambiar estado",
+                        JOptionPane.YES_NO_CANCEL_OPTION,
+                        JOptionPane.QUESTION_MESSAGE,
+                        null, // null para icono por defecto.
+                        new Object[]{"Cambiar", "Cancelar"}, // null para YES, NO y CANCEL
+                        "Cancelar");
+
+                if (seleccion != 1) {
+                    DAOGerente metodosGerencia = new DAOGerente();
+                    String decision = String.valueOf(jComboBox1.getSelectedItem());
+                    if (decision.equals("Activar") && isActivo.equals("Desactivado")) {
+                        metodosGerencia.cambiarEstadoCuentaEmpleadoNomina(ced, true);
+                    } else if (decision.equals("Activar") && isActivo.equals("Activo")) {
+                        JOptionPane.showMessageDialog(null, "El usuario \"" + empleadoACambiar.getNombre() + "\" ya se encontraba activo.", "Error", 0);
+                    } else if (decision.equals("Desactivar") && isActivo.equals("Desactivado")) {
+                        JOptionPane.showMessageDialog(null, "El usuario \"" + empleadoACambiar.getNombre() + "\" ya se encontraba desactivado.", "Error", 0);
+                    } else {
+                        metodosGerencia.cambiarEstadoCuentaEmpleadoNomina(ced, false);
+                    }
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Cedula no encontrada. Verifique.", "Error", 0);
+            }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "¿Ingresó valores en los campos?", "Error", 0);
+        }
 
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        panelEmpleado atras = new panelEmpleado(empleadoActual);
+        panelGerente atras = new panelGerente(empleadoActual);
         atras.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnAtrasActionPerformed
@@ -181,7 +221,6 @@ public class modiUsuario extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -196,13 +235,17 @@ public class modiUsuario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(modiUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(modiUsuario.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(modiUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(modiUsuario.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(modiUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(modiUsuario.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(modiUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(modiUsuario.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>

@@ -51,7 +51,7 @@ public class panelPrincipal extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Bodoni MT Condensed", 1, 18)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/enter_icon-icons.com_71207.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/enter_icon-icons.com_71207.png"))); // NOI18N
         jButton1.setText("Ingresar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,7 +61,7 @@ public class panelPrincipal extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Bodoni MT Condensed", 1, 18)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/exit_icon-icons.com_70975.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/exit_icon-icons.com_70975.png"))); // NOI18N
         jButton3.setText("Salir");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,7 +72,7 @@ public class panelPrincipal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Bodoni MT Condensed", 1, 36)); // NOI18N
         jLabel1.setText("Bienvenido al Panel de Pago");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/star_bank.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/star_bank.png"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 18)); // NOI18N
         jLabel3.setText("Star Bank te da la Bienvenida al panel de pago");

@@ -150,7 +150,7 @@
               <Font name="Bodoni MT Condensed" size="18" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/vista/enter_icon-icons.com_71207.png"/>
+              <Image iconType="3" name="/recursos/enter_icon-icons.com_71207.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ingresar"/>
           </Properties>
@@ -167,7 +167,7 @@
               <Font name="Bodoni MT Condensed" size="18" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/vista/exit_icon-icons.com_70975.png"/>
+              <Image iconType="3" name="/recursos/exit_icon-icons.com_70975.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Salir"/>
           </Properties>
@@ -186,7 +186,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/vista/star_bank.png"/>
+              <Image iconType="3" name="/recursos/star_bank.png"/>
             </Property>
           </Properties>
         </Component>

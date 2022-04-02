@@ -13,24 +13,26 @@ public class DAOempleadoNomina {
     private DataBaseCuentas databaseCuentas = new DataBaseCuentas();
     private DataBaseEmpleadosTH databaseEmpleadosTH = new DataBaseEmpleadosTH();
     private DataBaseEmpleadosNomina databaseEmpleadosNomina = new DataBaseEmpleadosNomina();
+    private empleadoNomina[] empleadosNomina = (empleadoNomina[]) databaseEmpleadosNomina.leerRegistro();
+    private empleadoTH[] empleadosTH = (empleadoTH[]) databaseEmpleadosTH.leerRegistro();
 
     public void modificarSalario(int cedula, int salario) {
-        empleadoTH[] empleados = (empleadoTH[]) databaseEmpleadosTH.leerRegistro();
+
         boolean existeCedula = false;
         String json = "";
         Gson gson = new Gson();
-        for (int i = 0; i < empleados.length; i++) {
+        for (int i = 0; i < empleadosTH.length; i++) {
 
-            if (empleados[i].getCedula() == cedula) {
-                empleados[i].setSalario(salario);
+            if (empleadosTH[i].getCedula() == cedula) {
+                empleadosTH[i].setSalario(salario);
                 existeCedula = true;
             }
             if (i == 0) {
-                json += "[" + gson.toJson(empleados[i]) + ",\n";
-            } else if (i < empleados.length - 1) {
-                json += gson.toJson(empleados[i]) + ",\n";
+                json += "[" + gson.toJson(empleadosTH[i]) + ",\n";
+            } else if (i < empleadosTH.length - 1) {
+                json += gson.toJson(empleadosTH[i]) + ",\n";
             } else {
-                json += gson.toJson(empleados[i]) + "]";
+                json += gson.toJson(empleadosTH[i]) + "]";
             }
 
         }
@@ -49,7 +51,6 @@ public class DAOempleadoNomina {
     }
 
     public boolean pagarSalario() {
-        empleadoTH[] empleados = (empleadoTH[]) databaseEmpleadosTH.leerRegistro();
         cuenta[] cuentasEmpleados = (cuenta[]) databaseCuentas.leerRegistro();
         String json = "";
         Gson gson = new Gson();
@@ -58,9 +59,9 @@ public class DAOempleadoNomina {
         ArrayList<consignacion> pagos = new ArrayList<>();
         for (cuenta cuentasEmpleado : cuentasEmpleados) {
             if (cuentasEmpleado.cuentaActiva == true) {
-                int index = getIndexOfEmpleado(empleados, cuentasEmpleado.cedula);
+                int index = getIndexOfEmpleado(empleadosTH, cuentasEmpleado.cedula);
                 if (index != -1) {
-                    pagos.add(new consignacion(cuentasEmpleado.numeroCuenta, time, empleados[index].salario));
+                    pagos.add(new consignacion(cuentasEmpleado.numeroCuenta, time, empleadosTH[index].salario));
                 }
             }
         }
@@ -92,12 +93,20 @@ public class DAOempleadoNomina {
         return -1;
     }
 
-    public empleado verificarUsuario(int cedula, String pass) {
-        empleadoNomina[] empleados = (empleadoNomina[]) databaseEmpleadosNomina.leerRegistro();
-        for (int i = 0; i < empleados.length; i++) {
+    public empleadoNomina getEmpleado(int cedula) {
+        for (empleadoNomina empleadosNomina1 : empleadosNomina) {
+            if (empleadosNomina1.getCedula() == cedula) {
+                return empleadosNomina1;
+            }
+        }
+        return null;
+    }
 
-            if (empleados[i].getCedula() == cedula && empleados[i].password.equals(pass)) {
-                return empleados[i];
+    public empleado verificarUsuario(int cedula, String pass) {
+
+        for (empleadoNomina empleadosNomina1 : empleadosNomina) {
+            if (empleadosNomina1.getCedula() == cedula && empleadosNomina1.password.equals(pass)) {
+                return empleadosNomina1;
             }
         }
         return null;

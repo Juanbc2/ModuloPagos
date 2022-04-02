@@ -64,7 +64,7 @@ public class login extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 0, 24)); // NOI18N
         jLabel3.setText("Contraseña");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/user_icon-icons.com_66546.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/user_icon-icons.com_66546.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -129,19 +129,26 @@ public class login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        
+
         int cuenta = Integer.parseInt(txtUser.getText());
         String pass = txtPass.getText();
         DAOempleadoNomina metodos = new DAOempleadoNomina();
+        DAOGerente metodosGerencia = new DAOGerente();
         empleado ingreso = metodos.verificarUsuario(cuenta, pass);
-        if(ingreso != null){
+        empleado ingresoGerencia = metodosGerencia.verificarUsuario(cuenta, pass);
+        if (ingreso != null) {
             panelEmpleado panelEmpleado = new panelEmpleado(ingreso);
             panelEmpleado.setVisible(true);
             dispose();
-        }else{
+        } else if (ingresoGerencia != null) {
+            panelGerente panelGerente = new panelGerente(ingresoGerencia);
+            panelGerente.setVisible(true);
+            dispose();
+        } else {
             JOptionPane.showMessageDialog(rootPane, "Usuario y/o contraseña incorrectos.");
-        } 
-        
+        }
+
+
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**

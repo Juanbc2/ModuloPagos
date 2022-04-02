@@ -48,7 +48,7 @@ public class panelGerente extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/star_bank.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/star_bank.png"))); // NOI18N
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Star Bank S.A. - Pago de Nómina 2022");
@@ -70,7 +70,7 @@ public class panelGerente extends javax.swing.JFrame {
 
         btnModificar.setBackground(new java.awt.Color(255, 255, 255));
         btnModificar.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
-        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/shoppaymentorderbuy-04_icon-icons.com_73886.png"))); // NOI18N
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/shoppaymentorderbuy-04_icon-icons.com_73886.png"))); // NOI18N
         btnModificar.setText("Gestionar");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,8 +145,8 @@ public class panelGerente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        modiSalario salario = new modiSalario(empleadoActual);
-        salario.setVisible(true);
+        modiUsuario usuarios = new modiUsuario(empleadoActual);
+        usuarios.setVisible(true);
     }//GEN-LAST:event_btnModificarActionPerformed
 
     /**

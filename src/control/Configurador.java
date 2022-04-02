@@ -23,6 +23,7 @@ public final class Configurador {
     private static empleado empleadoActual;
     private static volatile Configurador miconfigurador;
     private static boolean gerente;
+    public static String nombreEmpleadoActual;
     public static String fechaUltimoPago;
     public static String fechaSiguientePago;
 

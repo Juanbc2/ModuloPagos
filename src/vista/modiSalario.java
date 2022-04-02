@@ -5,17 +5,17 @@
 package vista;
 
 import control.DAOempleadoNomina;
+import javax.swing.JOptionPane;
 import modelo.empleado;
 
 public class modiSalario extends javax.swing.JFrame {
 
     private static empleado empleadoActual;
+
     public modiSalario(empleado empleadoActual) {
         modiSalario.empleadoActual = this.empleadoActual;
         initComponents();
         setLocationRelativeTo(null);
-
-        
 
     }
 
@@ -70,7 +70,7 @@ public class modiSalario extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 18)); // NOI18N
         jLabel3.setText("Aquí se permitirá modificar el salario del usuario ingresado por cédula");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/UserEdit_40958.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/UserEdit_40958.png"))); // NOI18N
 
         btnAtras.setFont(new java.awt.Font("Bodoni MT Condensed", 1, 24)); // NOI18N
         btnAtras.setText("Atrás");
@@ -160,15 +160,20 @@ public class modiSalario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaActionPerformed
-        
+
     }//GEN-LAST:event_txtCedulaActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         DAOempleadoNomina metodos = new DAOempleadoNomina();
-        int ced = Integer.parseInt(txtCedula.getText());
-        int nuevoSalario = Integer.parseInt(txtNuevoSalario.getText());
-        dispose();
-        metodos.modificarSalario(ced, nuevoSalario);
+        try {
+            int ced = Integer.parseInt(txtCedula.getText());
+            int nuevoSalario = Integer.parseInt(txtNuevoSalario.getText());
+
+            metodos.modificarSalario(ced, nuevoSalario);
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "¿Ingresó valores en los campos?","Error", 0);
+        }
+
 
     }//GEN-LAST:event_btnBuscarActionPerformed
 
@@ -181,7 +186,6 @@ public class modiSalario extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

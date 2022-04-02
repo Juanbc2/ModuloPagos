@@ -52,7 +52,7 @@ public class pagos extends javax.swing.JFrame implements Runnable {
 
         btnBuscar1.setBackground(new java.awt.Color(255, 255, 255));
         btnBuscar1.setFont(new java.awt.Font("Bodoni MT Condensed", 1, 24)); // NOI18N
-        btnBuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/pay_cash_bill_money_buy_icon_143287.png"))); // NOI18N
+        btnBuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/pay_cash_bill_money_buy_icon_143287.png"))); // NOI18N
         btnBuscar1.setText("Pagar");
         btnBuscar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,7 +80,7 @@ public class pagos extends javax.swing.JFrame implements Runnable {
         jLabel4.setForeground(new java.awt.Color(51, 153, 0));
         jLabel4.setText("Fecha del siguiente pago a efectuar: Sin información.");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/usd-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95707.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/usd-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95707.png"))); // NOI18N
         jLabel5.setText("jLabel5");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

@@ -49,7 +49,7 @@ public class panelEmpleado extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/star_bank.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/star_bank.png"))); // NOI18N
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Star Bank S.A. - Pago de Nómina 2022");
@@ -71,7 +71,7 @@ public class panelEmpleado extends javax.swing.JFrame {
 
         btnPago.setBackground(new java.awt.Color(255, 255, 255));
         btnPago.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
-        btnPago.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/pay_cash_bill_money_buy_icon_143287.png"))); // NOI18N
+        btnPago.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/pay_cash_bill_money_buy_icon_143287.png"))); // NOI18N
         btnPago.setText("Pagar");
         btnPago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,7 +81,7 @@ public class panelEmpleado extends javax.swing.JFrame {
 
         btnModificar.setBackground(new java.awt.Color(255, 255, 255));
         btnModificar.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
-        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/shoppaymentorderbuy-04_icon-icons.com_73886.png"))); // NOI18N
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/shoppaymentorderbuy-04_icon-icons.com_73886.png"))); // NOI18N
         btnModificar.setText("Modificar");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

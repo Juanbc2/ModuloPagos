@@ -178,7 +178,7 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/vista/UserEdit_40958.png"/>
+              <Image iconType="3" name="/recursos/UserEdit_40958.png"/>
             </Property>
           </Properties>
         </Component>
