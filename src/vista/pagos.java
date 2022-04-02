@@ -4,6 +4,7 @@
  */
 package vista;
 
+<<<<<<< Updated upstream
 import control.*; 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -19,6 +20,29 @@ public class pagos extends javax.swing.JFrame implements Runnable{
         Thread t = new Thread(this);
         t.start();
         setLocationRelativeTo(null);
+=======
+import control.*;
+import data.DataBaseRegistroPagos;
+import javax.swing.JOptionPane;
+import modelo.empleado;
+import modelo.empleadoNomina;
+
+public class pagos extends javax.swing.JFrame implements Runnable {
+
+    public pagos(empleado empleadoActual) {
+        initComponents();
+        DataBaseRegistroPagos database = new DataBaseRegistroPagos();
+        RegistroPagos[] registroPagos = (RegistroPagos[]) database.leerRegistro();
+        RegistroPagos ultimoRegistro = registroPagos[registroPagos.length - 1];
+        Configurador configurador = Configurador.getConfigurador(empleadoActual, ultimoRegistro.fechaUltimoPago, ultimoRegistro.fechaSiguientePago);
+        jLabel3.setText("Fecha del último pago efectuado: " + Configurador.fechaUltimoPago);
+        jLabel4.setText("Fecha del siguiente pago a efectuar: " + Configurador.fechaSiguientePago);
+        if (configurador.pagosDisponibles()) {
+            btnBuscar1.setEnabled(true);
+        }
+        Thread t = new Thread(this);
+        t.start();
+>>>>>>> Stashed changes
     }
 
     /**
@@ -30,6 +54,7 @@ public class pagos extends javax.swing.JFrame implements Runnable{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< Updated upstream
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnBuscar1 = new javax.swing.JButton();
@@ -128,28 +153,109 @@ public class pagos extends javax.swing.JFrame implements Runnable{
                 .addContainerGap())
         );
 
+=======
+        jLabel1 = new javax.swing.JLabel();
+        btnBuscar = new javax.swing.JButton();
+        btnBuscar1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setText("Pagos de nómina");
+
+        btnBuscar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnBuscar.setText("Volver");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+
+        btnBuscar1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnBuscar1.setText("Pagar");
+        btnBuscar1.setEnabled(false);
+        btnBuscar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscar1ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel2.setText("Date");
+
+        jLabel3.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel3.setText("Fecha del último pago efectuado: Sin información.");
+
+        jLabel4.setForeground(new java.awt.Color(51, 153, 0));
+        jLabel4.setText("Fecha del siguiente pago a efectuar: Sin información.");
+
+>>>>>>> Stashed changes
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< Updated upstream
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(btnBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(5, 5, 5)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(btnBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+>>>>>>> Stashed changes
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+<<<<<<< Updated upstream
         dispose();
+=======
+        System.exit(0);
+>>>>>>> Stashed changes
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar1ActionPerformed
         int seleccion = JOptionPane.showOptionDialog(
+<<<<<<< Updated upstream
         rootPane,
         "¿Está seguro que desea pagar ahora? \n no podrá deshacer esta acción.", 
         "Pagar nómina",
@@ -179,6 +285,29 @@ public class pagos extends javax.swing.JFrame implements Runnable{
             String time24 = sdf24.format(dat);
             return time24;
     }
+=======
+                rootPane,
+                "¿Está seguro que desea pagar ahora? \n no podrá deshacer esta acción.",
+                "Pagar nómina",
+                JOptionPane.YES_NO_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null, // null para icono por defecto.
+                new Object[]{"Pagar", "Cancelar"}, // null para YES, NO y CANCEL
+                "Pagar");
+
+        if (seleccion != 1) {
+            DAOempleadoNomina metodos = new DAOempleadoNomina();
+            boolean pagosEfectuados = metodos.pagarSalario();
+            if (pagosEfectuados) {
+                JOptionPane.showMessageDialog(rootPane, "Nómina pagada con éxito.");
+                jLabel3.setText("Fecha del último pago efectuado: " + Configurador.fechaUltimoPago);
+                jLabel4.setText("Fecha del siguiente pago a efectuar: " + Configurador.fechaSiguientePago);
+                btnBuscar1.setEnabled(false);
+            }
+        }
+    }//GEN-LAST:event_btnBuscar1ActionPerformed
+
+>>>>>>> Stashed changes
     /**
      * @param args the command line arguments
      */
@@ -210,7 +339,11 @@ public class pagos extends javax.swing.JFrame implements Runnable{
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+<<<<<<< Updated upstream
                 new pagos().setVisible(true);
+=======
+                new pagos(new empleadoNomina()).setVisible(true);
+>>>>>>> Stashed changes
             }
         });
     }
@@ -222,12 +355,16 @@ public class pagos extends javax.swing.JFrame implements Runnable{
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+<<<<<<< Updated upstream
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+=======
+>>>>>>> Stashed changes
     // End of variables declaration//GEN-END:variables
 
     @Override
     public void run() {
+<<<<<<< Updated upstream
             while(true){
             String time24 = time(false);
             jLabel2.setText(time24);
@@ -235,4 +372,12 @@ public class pagos extends javax.swing.JFrame implements Runnable{
             
 
 }
+=======
+        while (true) {
+            String time24 = Configurador.time(false);
+            jLabel2.setText(time24);
+        }
+
+    }
+>>>>>>> Stashed changes
 }

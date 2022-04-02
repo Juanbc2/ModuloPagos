@@ -1,0 +1,302 @@
+[
+ {
+  "cedula": 848396844,
+  "numeroCuenta":54808578,
+  "entidad": "Bancolombia",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 786026884,
+  "numeroCuenta":70980317,
+  "entidad": "Bancolombia",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 725921964,
+  "numeroCuenta":93094349,
+  "entidad": "Bancolombia",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 412593539,
+  "numeroCuenta":57416270,
+  "entidad": "Bancolombia",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 246502993,
+  "numeroCuenta":36673766,
+  "entidad": "Davivienda",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 990976422,
+  "numeroCuenta":21893247,
+  "entidad": "Davivienda",
+  "cuentaActiva": false
+ },
+ {
+  "cedula": 657434053,
+  "numeroCuenta":53888934,
+  "entidad": "Davivienda",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 296773890,
+  "numeroCuenta": 90960605,
+  "entidad": "Davivienda",
+  "cuentaActiva": false
+ },
+ {
+  "cedula": 348313407,
+  "numeroCuenta":76168913,
+  "entidad": "Davivienda",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 747925821,
+  "numeroCuenta":37500220,
+  "entidad": "Davivienda",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 123434644,
+  "numeroCuenta":80846939,
+  "entidad": "Davivienda",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 674937775,
+  "numeroCuenta":79961178,
+  "entidad": "Banco Popular",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 586312074,
+  "numeroCuenta":89098128,
+  "entidad": "Banco Popular",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 101684252,
+  "numeroCuenta":95657199,
+  "entidad": "Banco Popular",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 825840191,
+  "numeroCuenta":45555999,
+  "entidad": "Banco Popular",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 538808460,
+  "numeroCuenta":41768224,
+  "entidad": "Banco Popular",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 928415376,
+  "numeroCuenta":14703547,
+  "entidad": "Banco Popular",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 292112341,
+  "numeroCuenta":38232876,
+  "entidad": "Bancolombia",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 191942187,
+  "numeroCuenta":65937960,
+  "entidad": "Bancolombia",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 707703392,
+  "numeroCuenta":26202206,
+  "entidad": "Bancolombia",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 616819947,
+  "numeroCuenta":67713415,
+  "entidad": "Davivienda",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 162598839,
+  "numeroCuenta":13591683,
+  "entidad": "Davivienda",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 759655418,
+  "numeroCuenta":60798861,
+  "entidad": "Davivienda",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 136423475,
+  "numeroCuenta":41850540,
+  "entidad": "Davivienda",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 435156349,
+  "numeroCuenta":78135023,
+  "entidad": "Bancolombia",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 761089170,
+  "numeroCuenta":96479865,
+  "entidad": "Bancolombia",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 913165683,
+  "numeroCuenta":63640473,
+  "entidad": "Bancolombia",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 697516964,
+  "numeroCuenta":63274930,
+  "entidad": "Bancolombia",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 262440440,
+  "numeroCuenta":24625431,
+  "entidad": "Bancolombia",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 133911134,
+  "numeroCuenta":60531890,
+  "entidad": "Bancolombia",
+  "cuentaActiva": false
+ },
+ {
+  "cedula": 890425844,
+  "numeroCuenta":76791722,
+  "entidad": "Davivienda",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 543239023,
+  "numeroCuenta":60397848,
+  "entidad": "Davivienda",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 225323426,
+  "numeroCuenta":85745912,
+  "entidad": "Davivienda",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 751898447,
+  "numeroCuenta":44214848,
+  "entidad": "Davivienda",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 143122628,
+  "numeroCuenta":99749026,
+  "entidad": "Banco Popular",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 747615527,
+  "numeroCuenta":78685382,
+  "entidad": "Banco Popular",
+  "cuentaActiva": false
+ },
+ {
+  "cedula": 877927523,
+  "numeroCuenta":36943044,
+  "entidad": "Banco Popular",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 775840775,
+  "numeroCuenta":84840714,
+  "entidad": "Banco Popular",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 152965094,
+  "numeroCuenta":14505436,
+  "entidad": "Davivienda",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 780043790,
+  "numeroCuenta":42703295,
+  "entidad": "Davivienda",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 568389190,
+  "numeroCuenta":58716813,
+  "entidad": "Davivienda",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 652770007,
+  "numeroCuenta":76249446,
+  "entidad": "Davivienda",
+  "cuentaActiva": false
+ },
+ {
+  "cedula": 575859212,
+  "numeroCuenta":51247946,
+  "entidad": "Bancolombia",
+  "cuentaActiva": false
+ },
+ {
+  "cedula": 337270868,
+  "numeroCuenta":52472148,
+  "entidad": "Bancolombia",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 816324819,
+  "numeroCuenta":80671017,
+  "entidad": "Bancolombia",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 154232258,
+  "numeroCuenta":98943583,
+  "entidad": "Banco Popular",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 237404364,
+  "numeroCuenta":78928443,
+  "entidad": "Banco Popular",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 436206316,
+  "numeroCuenta":48267233,
+  "entidad": "Bancolombia",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 373059148,
+  "numeroCuenta":86620955,
+  "entidad": "Bancolombia",
+  "cuentaActiva": true
+ },
+ {
+  "cedula": 821135055,
+  "numeroCuenta":79750602,
+  "entidad": "Bancolombia",
+  "cuentaActiva": true
+ }
+]

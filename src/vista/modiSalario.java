@@ -11,7 +11,11 @@ public class modiSalario extends javax.swing.JFrame {
     
     public modiSalario() {
         initComponents();
+<<<<<<< Updated upstream
         setLocationRelativeTo(null);
+=======
+        
+>>>>>>> Stashed changes
     }
 
     /**
@@ -160,11 +164,14 @@ public class modiSalario extends javax.swing.JFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         DAOempleadoNomina metodos = new DAOempleadoNomina();
-        empleadoTH[] empleados = metodos.leerRegistros();
         int ced = Integer.parseInt(txtCedula.getText());
         int nuevoSalario = Integer.parseInt(txtNuevoSalario.getText());
+<<<<<<< Updated upstream
         metodos.modificarSalario(empleados, ced, nuevoSalario);
         dispose();
+=======
+        metodos.modificarSalario(ced, nuevoSalario);
+>>>>>>> Stashed changes
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
@@ -176,6 +183,7 @@ public class modiSalario extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
