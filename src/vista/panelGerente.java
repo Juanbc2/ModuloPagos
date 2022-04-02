@@ -13,16 +13,16 @@ import modelo.empleado;
  *
  * @author alejo
  */
-public class panelEmpleado extends javax.swing.JFrame {
+public class panelGerente extends javax.swing.JFrame {
 
     /**
      * Creates new form panelEmpleado
      */
     private static empleado empleadoActual;
 
-    public panelEmpleado(empleado empleadoActual) {
+    public panelGerente(empleado empleadoActual) {
         initComponents();
-        panelEmpleado.empleadoActual = empleadoActual;
+        panelGerente.empleadoActual = empleadoActual;
         Configurador configurador = Configurador.getConfigurador(empleadoActual);
         setLocationRelativeTo(null);
     }
@@ -42,7 +42,6 @@ public class panelEmpleado extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        btnPago = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,20 +68,10 @@ public class panelEmpleado extends javax.swing.JFrame {
             }
         });
 
-        btnPago.setBackground(new java.awt.Color(255, 255, 255));
-        btnPago.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
-        btnPago.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/pay_cash_bill_money_buy_icon_143287.png"))); // NOI18N
-        btnPago.setText("Pagar");
-        btnPago.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPagoActionPerformed(evt);
-            }
-        });
-
         btnModificar.setBackground(new java.awt.Color(255, 255, 255));
         btnModificar.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/shoppaymentorderbuy-04_icon-icons.com_73886.png"))); // NOI18N
-        btnModificar.setText("Modificar");
+        btnModificar.setText("Gestionar");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModificarActionPerformed(evt);
@@ -115,9 +104,7 @@ public class panelEmpleado extends javax.swing.JFrame {
                                 .addGap(140, 140, 140))))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPago, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(231, 231, 231))
         );
         jPanel1Layout.setVerticalGroup(
@@ -130,9 +117,7 @@ public class panelEmpleado extends javax.swing.JFrame {
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4)))
-                .addGap(44, 44, 44)
-                .addComponent(btnPago, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(106, 106, 106)
                 .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,11 +144,6 @@ public class panelEmpleado extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void btnPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagoActionPerformed
-        pagos pago = new pagos(empleadoActual);
-        pago.setVisible(true);
-    }//GEN-LAST:event_btnPagoActionPerformed
-
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         modiSalario salario = new modiSalario(empleadoActual);
         salario.setVisible(true);
@@ -186,27 +166,27 @@ public class panelEmpleado extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(panelEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(panelGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(panelEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(panelGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(panelEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(panelGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(panelEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(panelGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new panelEmpleado(empleadoActual).setVisible(true);
+                new panelGerente(empleadoActual).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnModificar;
-    private javax.swing.JButton btnPago;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

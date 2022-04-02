@@ -26,14 +26,15 @@ public final class Configurador {
     public static String fechaUltimoPago;
     public static String fechaSiguientePago;
 
-    public static Configurador getConfigurador(empleado empleadoActual, String fechaUltimoPago, String fechaSiguientePago) {
+    public static Configurador getConfigurador(empleado empleadoActual) {
+        RegistroPagos[] ultimosRegistros = (RegistroPagos[]) database.leerRegistro();
         Configurador result = miconfigurador;
         if (result != null) {
             return miconfigurador;
         }
         synchronized (Configurador.class) {
             if (miconfigurador == null) {
-                miconfigurador = new Configurador(empleadoActual, fechaUltimoPago, fechaSiguientePago);
+                miconfigurador = new Configurador(empleadoActual, ultimosRegistros[ultimosRegistros.length-1].fechaUltimoPago, ultimosRegistros[ultimosRegistros.length-1].fechaSiguientePago);
             }
             return miconfigurador;
         }
@@ -66,7 +67,10 @@ public final class Configurador {
         } catch (ParseException ex) {
             System.out.println(ex.toString());
         }
-        return ultimoPago.compareTo(siguientePago) >= 1;
+        int n = ultimoPago.compareTo(siguientePago);
+        System.out.println(n);
+              
+        return n >= 1;
     }
 
     public static String time(boolean nextPayDate) {

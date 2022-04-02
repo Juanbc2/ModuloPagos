@@ -7,16 +7,18 @@ import modelo.empleado;
 
 public class pagos extends javax.swing.JFrame implements Runnable {
 
+    private static empleado empleadoActual;
+
     public pagos(empleado empleadoActual) {
         initComponents();
+        pagos.empleadoActual = empleadoActual;
+        Configurador configurador = Configurador.getConfigurador(empleadoActual);
         jLabel3.setText("Fecha del último pago efectuado: " + Configurador.fechaUltimoPago);
         jLabel4.setText("Fecha del siguiente pago a efectuar: " + Configurador.fechaSiguientePago);
-        DataBaseRegistroPagos database = new DataBaseRegistroPagos();
-        RegistroPagos[] registroPagos = (RegistroPagos[]) database.leerRegistro();
-        RegistroPagos ultimoRegistro = registroPagos[registroPagos.length - 1];
-        Configurador configurador = Configurador.getConfigurador(empleadoActual, ultimoRegistro.fechaUltimoPago, ultimoRegistro.fechaSiguientePago);
         if (configurador.pagosDisponibles()) {
             btnBuscar1.setEnabled(true);
+        }else{
+            btnBuscar1.setEnabled(false);
         }
         Thread t = new Thread(this);
         t.start();

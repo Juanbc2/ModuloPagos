@@ -3,6 +3,7 @@ package control;
 import modelo.*;
 import com.google.gson.Gson;
 import data.DataBaseCuentas;
+import data.DataBaseEmpleadosNomina;
 import data.DataBaseEmpleadosTH;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -11,6 +12,7 @@ public class DAOempleadoNomina {
 
     private DataBaseCuentas databaseCuentas = new DataBaseCuentas();
     private DataBaseEmpleadosTH databaseEmpleadosTH = new DataBaseEmpleadosTH();
+    private DataBaseEmpleadosNomina databaseEmpleadosNomina = new DataBaseEmpleadosNomina();
 
     public void modificarSalario(int cedula, int salario) {
         empleadoTH[] empleados = (empleadoTH[]) databaseEmpleadosTH.leerRegistro();
@@ -91,10 +93,10 @@ public class DAOempleadoNomina {
     }
 
     public empleado verificarUsuario(int cedula, String pass) {
-        empleadoTH[] empleados = (empleadoTH[]) databaseEmpleadosTH.leerRegistro();
+        empleadoNomina[] empleados = (empleadoNomina[]) databaseEmpleadosNomina.leerRegistro();
         for (int i = 0; i < empleados.length; i++) {
 
-            if (empleados[i].getCedula() == cedula && empleados[i].contraseña.equals(pass)) {
+            if (empleados[i].getCedula() == cedula && empleados[i].password.equals(pass)) {
                 return empleados[i];
             }
         }
