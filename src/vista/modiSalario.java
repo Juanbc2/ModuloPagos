@@ -11,11 +11,10 @@ public class modiSalario extends javax.swing.JFrame {
     
     public modiSalario() {
         initComponents();
-<<<<<<< Updated upstream
         setLocationRelativeTo(null);
-=======
+
         
->>>>>>> Stashed changes
+
     }
 
     /**
@@ -166,12 +165,11 @@ public class modiSalario extends javax.swing.JFrame {
         DAOempleadoNomina metodos = new DAOempleadoNomina();
         int ced = Integer.parseInt(txtCedula.getText());
         int nuevoSalario = Integer.parseInt(txtNuevoSalario.getText());
-<<<<<<< Updated upstream
-        metodos.modificarSalario(empleados, ced, nuevoSalario);
+
         dispose();
-=======
+
         metodos.modificarSalario(ced, nuevoSalario);
->>>>>>> Stashed changes
+
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed

@@ -129,19 +129,18 @@ public class login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        panelEmpleado empleado = new panelEmpleado();
-        DAOusuario user = new DAOusuario();
-        user[] usuarios = user.leerUsuarios();
-        boolean ingreso = false;
-        String cuenta = txtUser.getText();
+        
+        int cuenta = Integer.parseInt(txtUser.getText());
         String pass = txtPass.getText();
-        ingreso = user.verificarUsuario(usuarios, cuenta, pass);
-        if(ingreso == true){
-            empleado.setVisible(true);
+        DAOempleadoNomina metodos = new DAOempleadoNomina();
+        empleado ingreso = metodos.verificarUsuario(cuenta, pass);
+        if(ingreso != null){
+            panelEmpleado panelEmpleado = new panelEmpleado(ingreso);
+            panelEmpleado.setVisible(true);
             dispose();
         }else{
-            JOptionPane.showMessageDialog(rootPane, "Usuario y/o contraseña incorrectos");
-        }
+            JOptionPane.showMessageDialog(rootPane, "Usuario y/o contraseña incorrectos.");
+        } 
         
     }//GEN-LAST:event_btnIngresarActionPerformed
 

@@ -5,6 +5,7 @@ public class empleadoTH extends empleado {
     
     public String rol;
     public int salario;
+    public String contraseña;
     
     
     public empleadoTH(String rol, int salario) {

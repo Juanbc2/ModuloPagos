@@ -9,9 +9,11 @@ import javax.swing.JOptionPane;
 
 public class DAOempleadoNomina {
 
+    private DataBaseCuentas databaseCuentas = new DataBaseCuentas();
+    private DataBaseEmpleadosTH databaseEmpleadosTH = new DataBaseEmpleadosTH();
+
     public void modificarSalario(int cedula, int salario) {
-        DataBaseEmpleadosTH database = new DataBaseEmpleadosTH();
-        empleadoTH[] empleados = (empleadoTH[]) database.leerRegistro();
+        empleadoTH[] empleados = (empleadoTH[]) databaseEmpleadosTH.leerRegistro();
         boolean existeCedula = false;
         String json = "";
         Gson gson = new Gson();
@@ -28,15 +30,12 @@ public class DAOempleadoNomina {
             } else {
                 json += gson.toJson(empleados[i]) + "]";
             }
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
         }
         try {
             if (existeCedula == true) {
                 JOptionPane.showMessageDialog(null, "Salario modificado con éxito.");
-                database.persistir(json);
+                databaseEmpleadosTH.persistir(json);
             } else {
                 JOptionPane.showMessageDialog(null, "Cedula no encontrada. Verifique.");
             }
@@ -44,23 +43,16 @@ public class DAOempleadoNomina {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "No se pudo modificar salario, contacte con servicio técnico.", "Error", 0);
         }
+
     }
-<<<<<<< Updated upstream
-    
-    
-}
-=======
->>>>>>> Stashed changes
 
     public boolean pagarSalario() {
-        DataBaseCuentas databaseCuentas = new DataBaseCuentas();
-        DataBaseEmpleadosTH databaseEmpleadosTH = new DataBaseEmpleadosTH();
         empleadoTH[] empleados = (empleadoTH[]) databaseEmpleadosTH.leerRegistro();
         cuenta[] cuentasEmpleados = (cuenta[]) databaseCuentas.leerRegistro();
         String json = "";
         Gson gson = new Gson();
         String time = Configurador.time(false);
-        Configurador.actualizarFechas(time,Configurador.time(true));
+        Configurador.actualizarFechas(time, Configurador.time(true));
         ArrayList<consignacion> pagos = new ArrayList<>();
         for (cuenta cuentasEmpleado : cuentasEmpleados) {
             if (cuentasEmpleado.cuentaActiva == true) {
@@ -96,5 +88,17 @@ public class DAOempleadoNomina {
             }
         }
         return -1;
+    }
+
+    public empleado verificarUsuario(int cedula, String pass) {
+        empleadoTH[] empleados = (empleadoTH[]) databaseEmpleadosTH.leerRegistro();
+        for (int i = 0; i < empleados.length; i++) {
+
+            if (empleados[i].getCedula() == cedula && empleados[i].contraseña.equals(pass)) {
+                return empleados[i];
+            }
+        }
+        return null;
+
     }
 }

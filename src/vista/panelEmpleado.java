@@ -4,6 +4,8 @@
  */
 package vista;
 
+import modelo.empleado;
+
 /**
  *
  * @author alejo
@@ -13,8 +15,11 @@ public class panelEmpleado extends javax.swing.JFrame {
     /**
      * Creates new form panelEmpleado
      */
-    public panelEmpleado() {
+    private static empleado empleadoActual;
+
+    public panelEmpleado(empleado empleadoActual) {
         initComponents();
+        panelEmpleado.empleadoActual = empleadoActual;
         setLocationRelativeTo(null);
     }
 
@@ -151,7 +156,7 @@ public class panelEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagoActionPerformed
-        pagos pago = new pagos();
+        pagos pago = new pagos(empleadoActual);
         pago.setVisible(true);
     }//GEN-LAST:event_btnPagoActionPerformed
 
@@ -190,7 +195,7 @@ public class panelEmpleado extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new panelEmpleado().setVisible(true);
+                new panelEmpleado(empleadoActual).setVisible(true);
             }
         });
     }
