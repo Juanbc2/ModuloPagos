@@ -134,12 +134,17 @@ public class login extends javax.swing.JFrame {
         String pass = txtPass.getText();
         DAOempleadoNomina metodos = new DAOempleadoNomina();
         DAOGerente metodosGerencia = new DAOGerente();
-        empleado ingreso = metodos.verificarUsuario(cuenta, pass);
-        empleado ingresoGerencia = metodosGerencia.verificarUsuario(cuenta, pass);
+        empleadoNomina ingreso = (empleadoNomina) metodos.verificarUsuario(cuenta, pass);
+        gerente ingresoGerencia = (gerente) metodosGerencia.verificarUsuario(cuenta, pass);
         if (ingreso != null) {
-            panelEmpleado panelEmpleado = new panelEmpleado(ingreso);
-            panelEmpleado.setVisible(true);
-            dispose();
+            if (ingreso.activo) {
+                panelEmpleado panelEmpleado = new panelEmpleado(ingreso);
+                panelEmpleado.setVisible(true);
+
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Usuario inactivo, contacte con gerencia.");
+            }
         } else if (ingresoGerencia != null) {
             panelGerente panelGerente = new panelGerente(ingresoGerencia);
             panelGerente.setVisible(true);

@@ -1,5 +1,5 @@
 
-package control;
+package modelo;
 
 public class RegistroPagos {
     public int cedula;

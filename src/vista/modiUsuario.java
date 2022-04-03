@@ -213,8 +213,6 @@ public class modiUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        panelGerente atras = new panelGerente(empleadoActual);
-        atras.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnAtrasActionPerformed
 

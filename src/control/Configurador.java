@@ -1,14 +1,11 @@
 package control;
 
-import com.google.gson.Gson;
+import modelo.RegistroPagos;
 import data.DataBaseRegistroPagos;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import modelo.empleadoNomina;
 import modelo.empleadoTH;
 import modelo.empleado;
@@ -58,7 +55,7 @@ public final class Configurador {
         database.persistir(json);
     }
 
-    public boolean pagosDisponibles() {
+    public static boolean pagosDisponibles() {
         Calendar ultimoPago = Calendar.getInstance();
         Calendar siguientePago = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("d MMM yyyy HH:mm:ss");

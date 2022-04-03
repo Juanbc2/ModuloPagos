@@ -178,8 +178,6 @@ public class modiSalario extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        panelEmpleado atras = new panelEmpleado(empleadoActual);
-        atras.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnAtrasActionPerformed
 
