@@ -1,4 +1,4 @@
-[{"activo":false,"password":"123456","nombre":"Rodie Quest","cedula":840807558,"numeroCuenta":0},
+[{"activo":true,"password":"123456","nombre":"Rodie Quest","cedula":840807558,"numeroCuenta":0},
 {"activo":true,"password":"123456","nombre":"Drew Kann","cedula":452597809,"numeroCuenta":0},
 {"activo":false,"password":"123456","nombre":"Lissi Reyson","cedula":283237047,"numeroCuenta":0},
 {"activo":true,"password":"123456","nombre":"Robina Abade","cedula":830765620,"numeroCuenta":0},
