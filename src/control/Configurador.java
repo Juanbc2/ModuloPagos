@@ -56,18 +56,16 @@ public final class Configurador {
     }
 
     public static boolean pagosDisponibles() {
-        Calendar ultimoPago = Calendar.getInstance();
+        Calendar fechaActual = Calendar.getInstance();
         Calendar siguientePago = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("d MMM yyyy HH:mm:ss");
         try {
-            ultimoPago.setTime(sdf.parse(fechaUltimoPago));
+            //fechaActual.setTime(sdf.parse(fechaUltimoPago));
             siguientePago.setTime(sdf.parse(fechaSiguientePago));
         } catch (ParseException ex) {
             System.out.println(ex.toString());
         }
-        int n = ultimoPago.compareTo(siguientePago);
-        System.out.println(n);
-              
+        int n = fechaActual.compareTo(siguientePago);              
         return n >= 1;
     }
 
